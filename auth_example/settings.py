@@ -33,6 +33,7 @@ ALLOWED_HOSTS = ['localhost', 'django-auth-wanda-example.herokuapp.com']
 # Application definition
 
 INSTALLED_APPS = [
+    'bcrypt',
     'corsheaders',
     'rest_framework',
     'auth_api',
@@ -42,6 +43,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
+    'auth_example'
 ]
 
 MIDDLEWARE = [
@@ -96,9 +98,28 @@ db_from_env = dj_database_url.config(conn_max_age=600)
 DATABASES['default'].update(db_from_env)
 
 
+############
+# Bcrypt password Hashers
+############
+PASSWORD_HASHERS = [
+    'django.contrib.auth.hashers.BCryptSHA256PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2PasswordHasher',
+    'django.contrib.auth.hashers.PBKDF2SHA1PasswordHasher',
+    'django.contrib.auth.hashers.Argon2PasswordHasher',
+]
+
+
+
+
+
 # Password validation
 # https://docs.djangoproject.com/en/3.1/ref/settings/#auth-password-validators
 
+#
+#
+# This is the superuser auth not the auth for this auth_example
+#
+#
 AUTH_PASSWORD_VALIDATORS = [
     {
         'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator',
