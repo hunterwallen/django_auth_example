@@ -27,7 +27,7 @@ SECRET_KEY = '(tb0%%v3s@+!l_k2@#fdj6-8bhboc*!!yhs_dzvo++)m*6ap1h'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['localhost', 'wanda-django-auth-example.herokuapp.com']
+ALLOWED_HOSTS = ['localhost', 'django-auth-wanda-example.herokuapp.com']
 
 
 # Application definition
